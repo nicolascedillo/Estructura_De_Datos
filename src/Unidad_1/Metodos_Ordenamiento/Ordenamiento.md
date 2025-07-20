@@ -367,7 +367,3 @@ n=1,000,000:
 ```
 
 ---
-
-*"La elección del algoritmo correcto puede ser la diferencia entre segundos y horas de ejecución"* 🚀
-
-*"Los algoritmos avanzados no son solo más rápidos, son la diferencia entre lo posible y lo imposible cuando trabajas con grandes volúmenes de datos"* 🌟
