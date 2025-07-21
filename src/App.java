@@ -21,8 +21,10 @@ public class App {
         numeros.add(1);
         numeros.add(2);
         numeros.add(3);
-        numeros.add(4);
+        numeros.add(2);
         numeros.add(1);
-        System.out.println(eL.esSimetrica(numeros));
+        System.out.println(eL.contarSublistas(numeros));
+
+
     }
 }

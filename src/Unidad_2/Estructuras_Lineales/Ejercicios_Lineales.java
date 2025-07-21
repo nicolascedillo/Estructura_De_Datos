@@ -12,6 +12,12 @@ import java.util.Stack;
 
 public class Ejercicios_Lineales {
 
+    /**
+     * Suma los elementos de una pila
+     * 
+     * @param pila
+     * @return int
+     */
     public int sumarElementosPila(Stack<Integer> pila) {
         int resultado = 0;
 
@@ -22,6 +28,14 @@ public class Ejercicios_Lineales {
         return resultado;
     }
 
+    // ------------------------------------------------------------------------------------------
+
+    /**
+     * Cuenta la cantidad de vocales con una pila
+     * 
+     * @param texto
+     * @return int
+     */
     public int contarVocalesConPila(String texto) {
 
         Stack<Character> vocales = new Stack<>();
@@ -44,6 +58,14 @@ public class Ejercicios_Lineales {
         return cont;
     }
 
+    // ------------------------------------------------------------------------------------------
+
+    /**
+     * Invierte un texto
+     * 
+     * @param texto
+     * @return String
+     */
     public String invertirTexto(String texto) {
 
         Stack<Character> aux = new Stack<>();
@@ -60,6 +82,8 @@ public class Ejercicios_Lineales {
 
         return constructor.toString();
     }
+
+    // ------------------------------------------------------------------------------------------
 
     /**
      * Elimina duplicados de una lista de enteros manteniendo el orden de aparición.
@@ -85,6 +109,8 @@ public class Ejercicios_Lineales {
 
         return sinRepetidos;
     }
+
+    // ------------------------------------------------------------------------------------------
 
     /**
      * Verifica si una cadena es un palíndromo usando una pila.
@@ -124,6 +150,8 @@ public class Ejercicios_Lineales {
         return true;
     }
 
+    // ------------------------------------------------------------------------------------------
+
     /**
      * Cuenta cuántos elementos están repetidos en una cola.
      *
@@ -157,6 +185,8 @@ public class Ejercicios_Lineales {
         return repetidos;
     }
 
+    // ------------------------------------------------------------------------------------------
+
     /**
      * Invierte el contenido de una cola utilizando una pila.
      *
@@ -184,6 +214,8 @@ public class Ejercicios_Lineales {
 
         return invertidos;
     }
+
+    // ------------------------------------------------------------------------------------------
 
     /**
      * Separa vocales y consonantes de una lista de caracteres.
@@ -217,7 +249,21 @@ public class Ejercicios_Lineales {
         return datos;
     }
 
-    public boolean isValid(String s) {
+    // ------------------------------------------------------------------------------------------
+
+    /**
+     * Verifica si un texto tiene los parentesis validos
+     * 
+     * @param texto
+     * @return boolean
+     * 
+     *         Ejemplo:
+     *         Entrada: "(){}"\n
+     *         Salida: true
+     *         Entrada: "}"
+     *         Salida: false
+     */
+    public boolean isValidParenthesis(String s) {
 
         Stack<Character> stack = new Stack<>();
 
@@ -247,6 +293,13 @@ public class Ejercicios_Lineales {
         return stack.isEmpty();
     }
 
+    // ------------------------------------------------------------------------------------------
+
+    /**
+     * Ordena una pila
+     * 
+     * @param stack
+     */
     public void sortStack(Stack<Integer> stack) {
 
         // Creamos una pila auxiliar para ayudar en la ordenación
@@ -276,9 +329,11 @@ public class Ejercicios_Lineales {
         }
     }
 
-    /*
-     * 1. Suma recursiva de elementos en una pila
-     * Enunciado:
+    // ------------------------------------------------------------------------------------------
+
+    /**
+     * Suma recursiva de elementos en una pila
+     * 
      * Implementa una función que reciba una pila de enteros y retorne la suma de
      * todos sus elementos usando recursividad.
      * 
@@ -296,11 +351,14 @@ public class Ejercicios_Lineales {
         return ultimo + sumaConRecursividad(pila);
     }
 
-    /*
-     *  
+    // ------------------------------------------------------------------------------------------
+
+    /**
+     * 
      * 2. Verificar si una lista es simétrica
-     *  Enunciado:
-     * Dada una lista de enteros, determina si es simétrica (igual de izquierda a derecha y derecha a izquierda).
+     * Enunciado:
+     * Dada una lista de enteros, determina si es simétrica (igual de izquierda a
+     * derecha y derecha a izquierda).
      * 
      * Ejemplo:
      * Entrada: [1, 2, 3, 2, 1]
@@ -308,80 +366,143 @@ public class Ejercicios_Lineales {
      * Entrada: [1, 2, 3, 4, 1]
      * Salida: false
      */
-    public boolean esSimetrica(List<Integer> enteros){
+    public boolean esSimetrica(List<Integer> enteros) {
         Queue<Integer> cola = new LinkedList<>();
         Stack<Integer> pila = new Stack<>();
-        for(int num:enteros){
+        for (int num : enteros) {
             cola.add(num);
             pila.push(num);
         }
 
         while (!cola.isEmpty()) {
-            if(cola.poll() != pila.pop()){
+            if (cola.poll() != pila.pop()) {
                 return false;
             }
         }
         return true;
     }
 
-    /*
+    // ------------------------------------------------------------------------------------------
+
+    /**
      * 3. Eliminar los elementos repetidos de una cola
      * Enunciado:
-     * Dada una cola de enteros, elimina todos los elementos repetidos y retorna la cola sin duplicados, conservando el orden original.
+     * Dada una cola de enteros, elimina todos los elementos repetidos y retorna la
+     * cola sin duplicados, conservando el orden original.
      * Ejemplo:
      * Entrada: [4, 2, 2, 1, 4, 3]
      * Salida: [4, 2, 1, 3]
      */
-    public Queue<Integer> eliminarDuplicados(Queue<Integer> cola){
+    public Queue<Integer> eliminarDuplicados(Queue<Integer> cola) {
         Queue<Integer> sinDuplicados = new LinkedList<>();
-        for(int num: cola){
-            if(!sinDuplicados.contains(num)){
+        for (int num : cola) {
+            if (!sinDuplicados.contains(num)) {
                 sinDuplicados.add(num);
             }
         }
         return sinDuplicados;
     }
 
-    /*
+    // ------------------------------------------------------------------------------------------
+
+    /**
      * 4. Separar pares e impares en una lista
      * Enunciado:
-     * Implementa una función que reciba una lista de enteros y retorne dos listas: una con los pares y otra con los impares.
+     * Implementa una función que reciba una lista de enteros y retorne dos listas:
+     * una con los pares y otra con los impares.
      * Ejemplo:
      * Entrada: [3, 4, 7, 10, 5]
      * Salida: {pares: [4, 10], impares: [3, 7, 5]}
      */
-    public Map<String,List<Integer>> separarPatidad(List<Integer> lista){
+    public Map<String, List<Integer>> separarPatidad(List<Integer> lista) {
 
         List<Integer> pares = new LinkedList<>();
         List<Integer> impares = new LinkedList<>();
-        
-        for(int num:lista){
-            if(num %2==0){
+
+        for (int num : lista) {
+            if (num % 2 == 0) {
                 pares.add(num);
-            }else{
+            } else {
                 impares.add(num);
             }
         }
 
-        Map<String,List<Integer>> mapa = new HashMap<>();
+        Map<String, List<Integer>> mapa = new HashMap<>();
         mapa.put("pares", pares);
         mapa.put("impares", impares);
         return mapa;
     }
 
-    /*
+    // ------------------------------------------------------------------------------------------
+
+    /**
      * 5. Contar la frecuencia de cada elemento usando un mapa
      * Enunciado:
-     * Recibe una lista de enteros y retorna un mapa donde la clave sea el número y el valor cuántas veces aparece.
+     * Recibe una lista de enteros y retorna un mapa donde la clave sea el número y
+     * el valor cuántas veces aparece.
      * Ejemplo:
      * Entrada: [2, 3, 2, 4, 3, 2]
      * Salida: {2: 3, 3: 2, 4: 1}
      */
-    public Map<Integer,Integer> contarFrecuencia(List<Integer> lista){
-        Map<Integer,Integer> mapa = new HashMap<>();
-        for(int num:lista){
-            mapa.put(num, mapa.getOrDefault(num, 0)+1);
+    public Map<Integer, Integer> contarFrecuencia(List<Integer> lista) {
+        Map<Integer, Integer> mapa = new HashMap<>();
+        for (int num : lista) {
+            mapa.put(num, mapa.getOrDefault(num, 0) + 1);
         }
         return mapa;
+    }
+
+    // ------------------------------------------------------------------------------------------
+
+    /**
+     * 5. Contar el número de sublistas que son palíndromos
+     * Enunciado:
+     * Dada una lista de enteros, cuenta cuántas sublistas (segmentos consecutivos)
+     * son palíndromos.
+     * (Una sublista es cualquier segmento, por ejemplo [2,3,2] dentro de
+     * [1,2,3,2,1])
+     * 
+     * Ejemplo:
+     * Entrada: [1,2,3,2,1]
+     * Salida: 7
+     * (Las sublistas palíndromas son: [1], [2], [3], [2], [1], [2,3,2],
+     * [1,2,3,2,1])
+     */
+    public int contarSublistas(List<Integer> listaMayor) {
+
+        int cont = 0;
+        int n = listaMayor.size();
+
+        // Recorre el inicio de la lista
+        for (int i = 0; i < n; i++) {
+
+            // Recorre el final de una lista
+            for (int j = i; j < n; j++) {
+
+                // Manda al helper a ver si la lista mandada es palindromo
+                if (sublistaPalindromo(listaMayor, i, j)) {
+
+                    cont++; // Si lo es, lo cuenta
+                }
+            }
+        }
+        return cont;
+    }
+
+    private boolean sublistaPalindromo(List<Integer> sublista, int inicio, int fin) {
+
+        while (inicio < fin) {
+
+            // Compara cada elemento con el que le toca
+            if (!sublista.get(inicio).equals(sublista.get(fin))) {
+
+                return false;
+            }
+
+            // Para irse moviendo en la lista y comprobar todos lo elementos
+            inicio++;
+            fin--;
+        }
+        return true;
     }
 }
