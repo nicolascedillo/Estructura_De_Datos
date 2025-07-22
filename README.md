@@ -1,18 +1,52 @@
-## Getting Started
+# Estructura De Datos 📚
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+> **Resumen:** Resumen de todo el contenido de Estructura de Datos.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 📂 Organización del Repositorio
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+```
+src/
+│
+├── Unidad_1/
+│   ├── Lista.java
+│   ├── Pila.java
+│   ├── Cola.java
+│   └── ÁrbolBinario.java
+│
+├── Unidad_2/
+│   ├── Ordenamiento.java
+│   ├── Busqueda.java
+│
+├── Unidad_3/
+│   ├── FibonacciPD.java
+│   ├── Programacion_Dinamica.md
+│
+└── Unidad_4/
+    ├── Teoria_Complejidad.md
+```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 🌟 Contenido Destacado
 
-## Dependency Management
+- [Unidad 1](src/Unidad_1)
+  - [Busqueda](src/Unidad_1/Metodos_Busqueda)
+    - [Binaria](src/Unidad_1/Metodos_Busqueda/Binaria.java)
+    - [Lineal](src/Unidad_1/Metodos_Busqueda/Lineal.java)
+    - [Explicacion](src/Unidad_1/Metodos_Busqueda/Busquedas.md)
+  - [Ordenamiento](src/estructuras/Pila.java)
+  - [Recursividad](src/estructuras/Cola.java)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- [Algoritmos](src/algoritmos/)
+  - [Ordenamiento](src/algoritmos/Ordenamiento.java)
+  - [Búsqueda](src/algoritmos/Busqueda.java)
+
+- [Ejemplos y Pruebas](src/ejemplos/)
+  - [Main](src/ejemplos/Main.java)
+  - [Test de Estructuras](src/ejemplos/TestEstructuras.java)
+
+
+
+
